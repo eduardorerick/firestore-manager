@@ -12,9 +12,8 @@ export class FirebaseFirestoreManager<T> {
     private collection: CollectionReference<DocumentData, DocumentData>
   ) {}
 
-  public async add(payload: Partial<T>) {
+  public async create(payload: Partial<T>) {
     try {
-      console.log({ payload });
       const collection = this.collection;
       const docRef = await addDoc<DocumentData, DocumentData>(collection, {
         ...payload,
@@ -47,8 +46,16 @@ export class FirebaseFirestoreManager<T> {
     });
     return data;
   }
-  public async getFirst(params: Partial<T>) {
-    console.log({ params });
+
+  public async findUnique(params: Partial<T>) {
     return ({} as T) || null;
   }
+  public async findFirst(params: Partial<T>) {
+    return ({} as T) || null;
+  }
+
+  public async update() {}
+  public async updateMany() {}
+  public async delete() {}
+  public async deleteMany() {}
 }
