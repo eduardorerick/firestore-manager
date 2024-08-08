@@ -1,0 +1,30 @@
+{
+  "name": "@rerick/firestore-manager",
+  "version": "0.0.48",
+  "source": "src/index.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "require": "./dist/index.js",
+    "default": "./dist/index.modern.mjs"
+  },
+  "types": "dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.module.js",
+  "unpkg": "./dist/index.umd.js",
+  "scripts": {
+    "build": "rm -rf dist && microbundle",
+    "dev": "microbundle watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "firebase": "^10.12.5",
+    "microbundle": "^0.15.1",
+    "typescript": "^5.5.4"
+  },
+  "peerDependencies": {
+    "firebase": ">= 10.12.5"
+  }
+}
