@@ -1,5 +1,27 @@
 
 # 🚧 Under Development
+
+
+## Roadmap
+Features i want to implement in the project:
+
+- Create a single document
+- Create multiple documents
+- Get document by ID or unique identifier
+- Get all documents
+- Get the first document that matches a specific criteria
+- Get a filtered list of documents
+- Update a single document
+- Update multiple documents
+- Update or create documents
+- Delete a single document
+- Delete multiple documents
+- Delete all documents
+- Query operators (Not equal, Array membership, in, not-in, and array-contains-any) 
+- Compound Queries
+- OR Queries
+- Pagination
+
 # Firestore Manager
 Firestore Manager is an npm library designed to make Firestore easier to use with a syntax closer to popular ORMs like TypeORM and Prisma, rather than the default Firebase syntax.
 
@@ -27,12 +49,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "SUA_API_KEY",
-  authDomain: "SEU_AUTH_DOMAIN",
-  projectId: "SEU_PROJECT_ID",
-  storageBucket: "SEU_STORAGE_BUCKET",
-  messagingSenderId: "SEU_MESSAGING_SENDER_ID",
-  appId: "SEU_APP_ID",
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID",
 };
 
 firebase.initializeApp(firebaseConfig);
