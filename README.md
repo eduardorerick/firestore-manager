@@ -77,7 +77,7 @@ type ExampleModel = {
 } ;
 
 export const exampleModelService = createFirestoreService<ExampleModel>(
-  collection(firestore, "jobs")
+  collection(firestore, "exampleCollection")
 );
 ```
 ### Query
