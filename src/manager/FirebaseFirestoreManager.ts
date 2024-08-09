@@ -2,28 +2,23 @@ import {
   query,
   where,
   getDocs,
-  CollectionReference,
-  addDoc,
-  DocumentData,
 } from "firebase/firestore";
+import { BaseFirestoreClass } from "./common/BaseFirestoreClass";
+import { CreateDocument } from "./use-cases/create/CreateDocument";
 
-export class FirebaseFirestoreManager<T> {
-  constructor(
-    private collection: CollectionReference<DocumentData, DocumentData>
-  ) {}
+export class FirebaseFirestoreManager<T> extends BaseFirestoreClass<T> {
+  // public async create(payload: Partial<T>) {
+  //   try {
+  //     const collection = this.collection;
+  //     const docRef = await addDoc<DocumentData, DocumentData>(collection, {
+  //       ...payload,
+  //     });
 
-  public async create(payload: Partial<T>) {
-    try {
-      const collection = this.collection;
-      const docRef = await addDoc<DocumentData, DocumentData>(collection, {
-        ...payload,
-      });
-
-      return docRef;
-    } catch (e) {
-      console.error("Error adding document: ", e);
-    }
-  }
+  //     return docRef;
+  //   } catch (e) {
+  //     console.error("Error adding document: ", e);
+  //   }
+  // }
 
   /**
    * Create an firestore service instance
@@ -59,3 +54,5 @@ export class FirebaseFirestoreManager<T> {
   public async delete() {}
   public async deleteMany() {}
 }
+
+export interface FirebaseFirestoreManager<T> extends CreateDocument<T> {}

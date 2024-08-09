@@ -1,5 +1,7 @@
 import { CollectionReference, DocumentData } from "firebase/firestore";
-import { FirebaseFirestoreManager } from "../FirebaseFirestoreManager";
+import { FirebaseFirestoreManager } from "../manager/FirebaseFirestoreManager";
+import { applyMixins } from "../helpers/applyMixins";
+import { CreateDocument } from "../manager/use-cases/create";
 
 /**
  * Create an firestore service instance
@@ -12,5 +14,8 @@ import { FirebaseFirestoreManager } from "../FirebaseFirestoreManager";
 export function createFirestoreService<T>(
   collection: CollectionReference<DocumentData, DocumentData>
 ): FirebaseFirestoreManager<T> {
+  let classesToImplement = [CreateDocument];
+  applyMixins(FirebaseFirestoreManager, classesToImplement);
+
   return new FirebaseFirestoreManager<T>(collection);
 }
