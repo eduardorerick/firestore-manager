@@ -67,15 +67,14 @@ const firestore = getFirestore(app);
 You can create a firestore service instance with `createFirestoreService`, pass the model type as the generic for type completation.
 
 ```typescript
+import { createFirestoreService } from "@rerick/firestore-manager";
+
 type ExampleModel = {
     id: string
     title: string;
     exampleArray: string[];
     exampleNumber: number;
 } ;
-
-
-import { createFirestoreService } from "@rerick/firestore-manager";
 
 export const exampleModelService = createFirestoreService<ExampleModel>(
   collection(firestore, "jobs")
