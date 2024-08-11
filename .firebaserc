@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "staging": "er-job-mon"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}

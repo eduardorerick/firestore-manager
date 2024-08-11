@@ -1,4 +1,4 @@
-import { addDoc, DocumentData } from "firebase/firestore";
+import { addDoc, DocumentData, getDoc } from "firebase/firestore";
 import { BaseFirestoreClass } from "../../common/BaseFirestoreClass";
 
 export class CreateDocument<T> extends BaseFirestoreClass<T> {
@@ -9,7 +9,8 @@ export class CreateDocument<T> extends BaseFirestoreClass<T> {
         ...payload,
       });
 
-      return docRef;
+      const createdDoc = await getDoc(docRef);
+      return { id: createdDoc.id, ...createdDoc.data() };
     } catch (e) {
       console.error("Error adding document: ", e);
     }
